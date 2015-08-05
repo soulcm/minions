@@ -1,0 +1,47 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.minions {
+	width: 300px;
+	margin:100px auto;
+	position: relative;
+}
+
+$borderColor: #000;
+
+@mixin border-style($bWidth: 5px, $bType: solid, $bColor: $borderColor, $bPos: '') {
+	border#{$bPos}: $bWidth $bType $bColor;
+}
+
+@mixin rotate($deg) {
+    -webkit-transform: rotate($deg);
+    -moz-transform: rotate($deg);
+    -ms-transform: rotate($deg);
+    transform: rotate($deg);
+}
+
+@mixin translate($sizeX, $sizeY) {
+    -webkit-transform: translate($sizeX,$sizeY);
+    -moz-transform: translate($sizeX, $sizeY);
+    -ms-transform: translate($sizeX,$sizeY);
+    transform: translate($sizeX,$sizeY);
+}
+
+@mixin translateX($sizeX) {
+    -webkit-transform: translateX($sizeX);
+    -moz-transform: translateX($sizeX);
+    -ms-transform: translateX($sizeX);
+    transform: translateX($sizeX);
+}
+
+@mixin translateY($sizeY) {
+    -webkit-transform: translateY($sizeY);
+    -moz-transform: translateY($sizeY);
+    -ms-transform: translateY($sizeY);
+    transform: translateY($sizeY);
+}
+
+@import 'body';
+@import 'trousers';

@@ -1,0 +1,12 @@
+$mainColor: rgb(249,217,70);
+
+.bodyH {
+  position: absolute;
+  width: 240px;
+  height: 400px;
+  @include border-style;
+  border-radius: 115px;
+  background: $mainColor;
+  overflow: hidden;
+  z-index: 2;
+}

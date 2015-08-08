@@ -1,0 +1,28 @@
+.mouse {
+	position: relative;
+	.mouse-shape {
+		position: absolute;
+		z-index: 3;
+		top: 150px;
+		left: 50%;
+		width: 55px;
+		height: 35px;
+		-webkit-transform: rotate(-35deg) translateX(-50%);
+		@include border-style;
+		border-bottom-left-radius: 30px;
+		background: #fff;
+		&::after {
+			content: '';
+			width: 70px;
+			height: 32px;
+			@include border-style($bPos: -bottom);
+			border-radius: 35px 26px 5px 5px;
+			background: rgb(249,217,70);
+			position: absolute;
+			top: -16px;
+			left: 3px;
+			@include rotate(34deg);
+		}
+	}
+}
+

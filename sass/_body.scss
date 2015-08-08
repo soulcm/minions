@@ -2,7 +2,7 @@ $mainColor: rgb(249,217,70);
 
 .bodyH {
   position: absolute;
-  width: 240px;
+  width: 100%;
   height: 400px;
   @include border-style;
   border-radius: 115px;

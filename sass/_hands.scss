@@ -1,0 +1,61 @@
+@mixin hands-after {
+	content: '';
+	width: 6px;
+	@include border-style(3px);
+	border-radius: 3px;
+	position: absolute;
+	top: 50px;
+}
+
+.hands {
+	position: relative;
+	.left-hand, .right-hand {
+		width: 80px;
+		height: 80px;
+		border:6px solid #000;
+		border-radius: 25px;
+		background: rgb(249,217,70);
+		position: absolute;
+		top:220px;
+
+	}
+	.left-hand {
+		left:-23px;
+		@include rotate(40deg);
+		&::after {
+			@include hands-after;
+			left: 13px;
+			@include rotate(90deg);
+		}
+		-webkit-animation:leftHand .8s ease-in-out infinite;
+	}
+	.right-hand {
+		left:182px;
+		@include rotate(-40deg);
+		&::after {
+			@include hands-after;
+			left: 53px;
+			@include rotate(-90deg);
+		}
+		-webkit-animation:rightHand .8s ease-in-out infinite;
+	}
+}
+
+@-webkit-keyframes rightHand{
+	0%,50%,100%{
+		-webkit-transform: rotate(-40deg);
+	}
+	80%{
+		-webkit-transform: rotate(-37deg) translateX(-1px);
+	}
+}
+
+@-webkit-keyframes leftHand{
+	0%,50%,100%{
+		-webkit-transform: rotate(40deg);
+	}
+	30%{
+		-webkit-transform: rotate(37deg) translateX(1px);
+	}
+}
+

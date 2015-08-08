@@ -1,0 +1,75 @@
+@mixin foot-after {
+	content: '';
+	width: 60px;
+	height: 35px;
+	background: #000;
+	position: absolute;
+	top:14.4px;
+}
+
+.feet {
+	position: relative;
+	.left-foot, .right-foot {
+		width: 36px;
+		height: 50px;
+		background: #000;
+		position: absolute;
+		top: 406px;
+	}
+	.left-foot {
+		border-bottom-right-radius: 6px;
+		border-bottom-left-radius: 9px;
+		left:88px;
+		-webkit-transform-origin: right top;
+		-webkit-animation: leftfoot .8s ease-in-out infinite;
+		&::after {
+			@include foot-after;
+			left:-36px;
+			border-radius: 20px 10px 21px 15px;
+			@include rotate(5deg);
+		}
+	}
+	.right-foot {
+		border-bottom-right-radius: 9px;
+		border-bottom-left-radius: 6px;
+		left:130px;
+		-webkit-transform-origin: left top;
+		-webkit-animation: rightfoot .8s ease-in-out infinite;
+		&::after {
+			@include foot-after;
+			border-radius: 10px 20px 15px 21px;
+			left:13px;
+			@include rotate(-5deg);
+		}
+	}
+}
+
+.ground-shadow{
+	width: 200px;
+	height: 2px;
+	border-radius: 50%;
+	background: rgba(0,0,0,0.3);
+	box-shadow: 0 0 2px 4px rgba(0,0,0,0.3);
+	position: relative;
+	top: 455px;
+	left:25px;
+}
+
+@-webkit-keyframes rightfoot{
+	0%,50%,100%{
+		-webkit-transform: rotate(0deg);
+	}
+
+	30%{
+		-webkit-transform: rotate(-10deg);
+	}
+}
+
+@-webkit-keyframes leftfoot{
+	0%,50%,100%{
+		-webkit-transform: rotate(0deg);
+	}
+	80%{
+		-webkit-transform: rotate(10deg);
+	}
+}
